@@ -1,0 +1,29 @@
+<nav class="fixed top-0 inset-x-0 z-10 flex justify-between items-center bg-black py-4 px-6">
+  <a (click)="close()"><img src="logo.png" alt="logo" class="h-10 w-auto"></a>
+
+  <button
+    (click)="toggle()"
+    class="md:hidden text-white text-2xl z-100"
+    aria-label="Menu"
+  >
+    {{ open() ? '✕' : '☰' }}
+  </button>
+
+  <ul
+    class="flex gap-6 list-none m-0 p-0
+           max-md:fixed max-md:top-0 max-md:right-0 max-md:h-screen max-md:w-64
+           max-md:flex-col max-md:bg-black/90 max-md:pt-20 max-md:px-6
+           max-md:transition-transform"
+    [class.max-md:translate-x-full]="!open()"
+  >
+    @for (p of pages; track p.label) {
+      <li>
+        <a (click)="close()" class="text-white opacity-80 hover:opacity-100"
+        >
+          {{ p.label }}
+        </a>
+      </li>
+    }
+  </ul>
+</nav>
+
