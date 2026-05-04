@@ -1,10 +1,10 @@
 <nav class="fixed top-0 inset-x-0 z-50 h-16 bg-black flex justify-between items-center px-6">
 
-  <a (click)="close()">
+  <a (click)="close()" routerLink="/" >
     <img src="logo.png" alt="logo" class="h-10 w-auto">
   </a>
 
-  <button (click)="toggle()"class="md:hidden text-white text-2xl"
+  <button (click)="toggle()"class="md:hidden text-white text-2xl z-60"
     aria-label="Menu"
   >
     {{ open() ? '✕' : '☰' }}
@@ -20,12 +20,13 @@
     @for (p of pages; track p.label) {
       <li>
         <a
-          (click)="close()"
-          [routerLink]="p.path"
-          routerLinkActive="opacity-100"
-          class="text-white opacity-70 hover:opacity-100"
-        >
-          {{ p.label }}
+  (click)="close()"
+  [routerLink]="p.path"
+  routerLinkActive="text-white opacity-100 font-semibold"
+  [routerLinkActiveOptions]="{ exact: true }"
+  class="text-gray-400 hover:text-white transition"
+>
+  {{ p.label }}
         </a>
       </li>
     }
