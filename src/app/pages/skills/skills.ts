@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Skill } from '../../core/interfaces/skill';
 @Component({
   selector: 'app-skills',
   imports: [],
@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './skills.css',
 })
 export class Skills {
-  skills: any = [
+  skills: Skill[] = [
     {
       title: 'Languages',
       items: 'C#, JavaScript, TypeScript, Python, SQL'
