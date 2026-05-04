@@ -1,4 +1,4 @@
-<nav class="fixed top-0 inset-x-0 z-10 flex justify-between items-center bg-black py-4 px-6">
+<nav class="fixed top-0 inset-x-0 z-10 bg-black flex justify-between items-center py-4 px-6">
   <a (click)="close()"><img src="logo.png" alt="logo" class="h-10 w-auto"></a>
 
   <button
@@ -18,7 +18,7 @@
   >
     @for (p of pages; track p.label) {
       <li>
-        <a (click)="close()" class="text-white opacity-80 hover:opacity-100"
+        <a (click)="close()" [routerLink]="p.path" routerLinkActive="opacity-100" class="text-white opacity-80 hover:opacity-100"
         >
           {{ p.label }}
         </a>
