@@ -1,16 +1,17 @@
 import { Component, signal } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
 export class Navbar {
   pages = [
-    { label: 'Home'},
-    { label: 'Projects'},
-    { label: 'Skills'},
+    { label: 'Home',path:'/'},
+    { label: 'Projects',path:'/projects'},
+    { label: 'Skills',path:'/skills'},
   ];
 
   open = signal(false);
