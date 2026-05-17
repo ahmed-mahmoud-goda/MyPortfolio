@@ -10,8 +10,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class Navbar {
   pages = [
     { label: 'Home',path:'/'},
-    { label: 'Projects',path:'/projects'},
+    { label: 'Education', path:'/education'},
     { label: 'Skills',path:'/skills'},
+    { label: 'Projects',path:'/projects'},
     { label: 'Certificates', path:'/certificates'}
   ];
 
